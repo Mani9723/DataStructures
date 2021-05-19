@@ -8,7 +8,7 @@ import static Utils.Exchange.exchange;
 public class InsertionSort
 {
 
-	private static <T extends Comparable<T>> void sort(T[] list)
+	private static <T extends Comparable<T>> void insertionSort(T[] list)
 	{
 		for(int i = 1; i < list.length; i++){
 			for(int j = i-1; j >= 0; j--){
@@ -22,7 +22,7 @@ public class InsertionSort
 	public static <T extends Comparable<T>> void printAndSort(T[] list)
 	{
 		printArray(list);
-		sort(list);
+		insertionSort(list);
 		printArray(list);
 		System.out.println(isSorted(list));
 	}

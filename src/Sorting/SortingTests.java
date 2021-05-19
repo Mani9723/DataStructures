@@ -1,5 +1,6 @@
 package Sorting;
 
+import java.lang.reflect.Method;
 import java.util.LinkedList;
 
 import static Utils.ArrayUtils.*;
@@ -31,6 +32,16 @@ public class SortingTests
 		InsertionSort.printAndSort(list2);
 		InsertionSort.printAndSort(list3);
 		InsertionSort.printAndSort(list4);
+	}
+
+	public void testShellSort()
+	{
+		getArrays();
+		ShellSort.printAndSort(list0);
+		ShellSort.printAndSort(list1);
+		ShellSort.printAndSort(list2);
+		ShellSort.printAndSort(list3);
+		ShellSort.printAndSort(list4);
 	}
 
 	private void getArrays()
