@@ -1,12 +1,14 @@
 package Sorting;
 
 import java.util.Random;
+
+import static Utils.ArrayUtils.*;
 import static Utils.Exchange.exchange;
 
 public class InsertionSort
 {
 
-	public <T extends Comparable<T>> void sort(T[] list)
+	private static <T extends Comparable<T>> void sort(T[] list)
 	{
 		for(int i = 1; i < list.length; i++){
 			for(int j = i-1; j >= 0; j--){
@@ -17,18 +19,17 @@ public class InsertionSort
 		}
 	}
 
+	public static <T extends Comparable<T>> void printAndSort(T[] list)
+	{
+		printArray(list);
+		sort(list);
+		printArray(list);
+		System.out.println(isSorted(list));
+	}
+
 	public static void main(String[] args)
 	{
-		Character[] a = new Character[100];
-		for (int i = 0; i < a.length; i++) {
-			a[i] = (char)(new Random().nextInt(26)+97);
-			System.out.print(a[i] + " ");
-		}
-		new InsertionSort().sort(a);
-		System.out.println();
-		for (int i = 0; i < a.length; i++) {
-			System.out.print(a[i] + " ");
-		}
+		new SortingTests().testInsertionSort();
 
 	}
 }

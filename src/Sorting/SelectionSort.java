@@ -2,11 +2,12 @@ package Sorting;
 
 import java.util.Random;
 import static Utils.Exchange.exchange;
+import static Utils.ArrayUtils.*;
 
 
 public class SelectionSort
 {
-	public <T extends Comparable<T>> void sort(T[] list)
+	private static <T extends Comparable<T>> void selectionSort(T[] list)
 	{
 		int minIndex;
 
@@ -21,18 +22,17 @@ public class SelectionSort
 		}
 	}
 
+	public static <T extends Comparable<T>> void printAndSort(T[] list)
+	{
+		printArray(list);
+		selectionSort(list);
+		printArray(list);
+		System.out.println(isSorted(list));
+	}
+
 	public static void main(String[] args)
 	{
-		Character[] a = new Character[100];
-		for (int i = 0; i < a.length; i++) {
-			a[i] = (char)(new Random().nextInt(26)+97);
-			System.out.print(a[i] + " ");
-		}
-		new SelectionSort().sort(a);
-		System.out.println();
-		for (int i = 0; i < a.length; i++) {
-			System.out.print(a[i] + " ");
-		}
+		new SortingTests().testSelectionSort();
 
 	}
 
