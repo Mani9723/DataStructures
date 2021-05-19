@@ -3,21 +3,17 @@ package Sorting;
 import java.util.Random;
 import static Utils.Exchange.exchange;
 
-
-public class SelectionSort
+public class InsertionSort
 {
+
 	public <T extends Comparable<T>> void sort(T[] list)
 	{
-		int minIndex;
-
-		for(int i = 0; i < list.length; i++){
-			minIndex = i;
-			for(int j = i+1; j<list.length;j++){
-				if(list[j].compareTo(list[minIndex]) < 0) {
-					minIndex = j;
+		for(int i = 1; i < list.length; i++){
+			for(int j = i-1; j >= 0; j--){
+				if(list[j+1].compareTo(list[j])<0){
+					exchange(list,j+1,j);
 				}
 			}
-			exchange(list,i,minIndex);
 		}
 	}
 
@@ -28,13 +24,11 @@ public class SelectionSort
 			a[i] = (char)(new Random().nextInt(26)+97);
 			System.out.print(a[i] + " ");
 		}
-		new SelectionSort().sort(a);
+		new InsertionSort().sort(a);
 		System.out.println();
 		for (int i = 0; i < a.length; i++) {
 			System.out.print(a[i] + " ");
 		}
 
 	}
-
-	
 }
