@@ -44,6 +44,16 @@ public class SortingTests
 		ShellSort.printAndSort(list4);
 	}
 
+	public void testMergeSort()
+	{
+		getArrays();
+		MergeSort.printAndSort(list0);
+		MergeSort.printAndSort(list1);
+		MergeSort.printAndSort(list2);
+		MergeSort.printAndSort(list3);
+		MergeSort.printAndSort(list4);
+	}
+
 	private void getArrays()
 	{
 		list0 = generateIntArray(20,0,50);
