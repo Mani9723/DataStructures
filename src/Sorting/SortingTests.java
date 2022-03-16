@@ -56,7 +56,7 @@ public class SortingTests
 
 	private void getArrays()
 	{
-		list0 = generateIntArray(20,0,50);
+		list0 = generateIntArray(10,0,50);
 		list1 = generateFloatArray(10);
 		list2 = generateCharArray(10,65,26);
 		list3 = generateDoubleArray(10);
