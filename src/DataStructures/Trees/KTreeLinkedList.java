@@ -217,6 +217,22 @@ public class KTreeLinkedList<E> implements TreeIterable<E>
 	}
 	}
 
+	public boolean find(E target)
+	{
+		return bfs(root,target);
+	}
+
+	private boolean bfs(Node<E> root, E target)
+	{
+		if(root == null)
+			return false;
+		if(root.data == target)
+			return true;
+		for(Node<E> node : root.children)
+			return bfs(node,target);
+		return false;
+	}
+
 	/**
 	 * Creates an object array of the tree.
 	 * It contains the same values as the original tree.
