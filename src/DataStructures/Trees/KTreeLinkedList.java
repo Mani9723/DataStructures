@@ -1,4 +1,7 @@
 package DataStructures.Trees;
+import DataStructures.Trees.Exceptions.InvalidKException;
+import DataStructures.Trees.Exceptions.InvalidTreeException;
+
 import java.util.*;
 
 

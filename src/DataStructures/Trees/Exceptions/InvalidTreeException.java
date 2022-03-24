@@ -1,4 +1,4 @@
-package DataStructures.Trees;
+package DataStructures.Trees.Exceptions;
 
 /**
  * Exception class that is thrown when adding or removing
