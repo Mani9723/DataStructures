@@ -189,32 +189,32 @@ public class KTreeLinkedList<E> implements TreeIterable<E>
 		if(index < 0){
 			return false;
 		} if(index == 0){
-		root.data = value;
-		if(value == null){
-			numElem = 0; h = 0;
-			capacity = 0;
-		}
-		return true;
-	} else{
-		int i = 0;
-		Node<E> parentNode = null;
-		Queue<Node<E>> queue = new LinkedList<>();
-		queue.add(root);
-		while(!queue.isEmpty() && i++ != index){
-			parentNode = queue.remove();
-			queue.addAll(parentNode.children);
-		}if(parentNode.data == null && value != null){
-			throw new InvalidTreeException();
-		}else{
-			if(queue.element().data == null && value != null){
-				numElem++;
-			}else if(queue.element().data != null && value == null){
-				numElem--;
+			root.data = value;
+			if(value == null){
+				numElem = 0; h = 0;
+				capacity = 0;
 			}
-			queue.element().data = value;
 			return true;
+		} else{
+			int i = 0;
+			Node<E> parentNode = null;
+			Queue<Node<E>> queue = new LinkedList<>();
+			queue.add(root);
+			while(!queue.isEmpty() && i++ != index){
+				parentNode = queue.remove();
+				queue.addAll(parentNode.children);
+			}if(parentNode.data == null && value != null){
+				throw new InvalidTreeException();
+			}else{
+				if(queue.element().data == null && value != null){
+					numElem++;
+				}else if(queue.element().data != null && value == null){
+					numElem--;
+				}
+				queue.element().data = value;
+				return true;
+			}
 		}
-	}
 	}
 
 	public boolean find(E target)
